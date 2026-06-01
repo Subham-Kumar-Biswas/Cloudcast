@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/* || RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* || VARIABLES */
+:root {
+  /* FONTS */
+  --ff: "Nunito", sans-serif;
+  --fs: clamp(1rem, 2.2vh, 1.5rem);
+  --fs-sm: 0.75rem;
+  --fs-md: 0.85rem;
+  --fs-lg: 1.1rem;
+  --fs-xl: 1.2rem;
+  --fs-temp: 5rem;
+
+  /* COLORS */
+  --page-bg: #d6e7f1;
+  --secondary-color: #0ea5e9;
+  --primary-text: #0c1a2e;
+  --secondary-text: #0369a1;
+  --border-color: #7dd3fc;
+  --cards: #fff;
+
+  /* SPACING */
+  --padding: 1.2rem;
+  --gap: 0.8rem;
+  --gap-sm: 0.3rem;
+
+  /* BORDER */
+  --border: 1px solid var(--border-color);
+  --border-radius: 15px;
+
+  /* SHADOWS */
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.2);
+  --shadow-sm-dark: 0 1px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+  /* CARD SIZE */
+  --card-width: 10rem;
+}
+
+/* || GENERAL STYLE */
+html {
+  font-size: var(--fs);
+  font-family: var(--ff);
+  background-color: var(--page-bg);
+}
+
+body {
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+main {
+    min-width: 100%;
+}
+
+hr {
+    border: none;
+    border-top: var(--border);
+    margin: 0 var(--padding);
+}
+
+/* || HEADER */
+header {
+  min-width: 100%;
+  min-height: 70px;
+  background-color: var(--secondary-color);
+  padding-top: 0.5rem;
+}
+
+nav {
+  min-width: 100%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+nav input,
+nav button {
+  height: 40px;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+}
+
+nav input {
+  width: 80vw;
+  font-size: var(--fs);
+  background-color: #fff;
+  color: var(--primary-text);
+  border: var(--border);
+}
+
+nav input:hover,
+nav input:focus {
+  border: 3px solid #636060eb;
+}
+
+nav button {
+  background-color: transparent;
+  color: whitesmoke;
+  font-size: var(--fs-xl);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* || HERO */
+.hero {
+    position: relative;
+    color: #fff;
+    background-image: url(../Images/hero_background_image.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1rem;
+    gap: 0.4rem
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(14, 165, 233, 0.2);
+}
+
+.city {
+    font-size: var(--fs-xl);
+    font-weight: 600;
+    text-shadow: var(--shadow-sm-dark);
+    letter-spacing: 0.05rem;
+}
+
+.temperature {
+    font-size: var(--fs-temp);
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: var(--shadow-md);
+}
+
+.condition {
+    font-size: var(--fs-lg);
+    text-shadow: var(--shadow-sm);
+}
+
+.feels-like {
+    font-size: var(--fs-md);
+    text-shadow: var(--shadow-sm);
+}
+
+.high-low {
+    display: flex;
+    gap: 1rem;
+    font-size: var(--fs-md);
+    text-shadow: var(--shadow-sm);
+}
+
+
+/* || STATS */
+.stats-row {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+    flex-direction: row;
+    padding: var(--padding);
+}
+
+.stat-card {
+    background-color: var(--cards);
+    height: 6rem;
+    width: var(--card-width);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: var(--gap-sm);
+}
+
+.stat-card i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.stat-label {
+    font-size: var(--fs-sm);
+    color: var(--secondary-text);
+}
+
+.stat-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-text);
+}
+
+
+/* || FORECAST */
+.forecast {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+    padding: var(--padding);
+}
+
+.forecast-card {
+    background-color: var(--cards);
+    height: 8rem;
+    width: var(--card-width);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: var(--gap-sm);
+}
+
+.forecast-card .day-name {
+    font-size: var(--fs-md);
+    font-weight: 600;
+    color: var(--secondary-text)
+}
+
+.forecast-card .high-temp {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-text);
+}
+
+.forecast-card .low-temp {
+    font-size: var(--fs-md);
+    color: var(--secondary-text);
+}
+
+
+/* || FOOTER */
+footer {
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1rem;
+    font-size: var(--fs-sm);
+}
+
+/* || ERROR STATE */
+.error-state {
+    text-align: center;
+    padding: 0.4rem;
+    color: #fff;
+    background-color: #dc2626;
+    font-weight: 600;
+    font-size: var(--fs-sm);
+}
+
+.hidden {
+    display: none;
+};

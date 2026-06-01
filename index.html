@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloudcast</title>
+    <link rel="icon" href="Images/Cloud_Cast_icon.webp" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <script src="JS/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <input
+          type="text"
+          id="search"
+          placeholder="Search city or zip code..."
+        />
+        <button id="search-btn" aria-label="Search" title="Search">
+          <i class="ti ti-search"></i>
+        </button>
+        <button
+          id="location-btn"
+          aria-label="Use my location"
+          title="Use My Location"
+        >
+          <i class="ti ti-current-location"></i>
+        </button>
+      </nav>
+      <div class="error-state hidden"></div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="city"></div>
+        <div class="temperature"></div>
+        <div class="condition"></div>
+        <div class="feels-like"></div>
+        <div class="high-low">
+          <span class="highest"></span>
+          <span class="lowest"></span>
+        </div>
+      </section>
+
+      <section class="stats-row">
+        <div class="stat-card">
+          <i class="ti ti-droplet"></i>
+          <span class="stat-label">Humidity</span>
+          <span class="stat-value humidity"></span>
+        </div>
+
+        <div class="stat-card">
+          <i class="ti ti-wind"></i>
+          <span class="stat-label">Wind</span>
+          <span class="stat-value wind"></span>
+        </div>
+
+        <div class="stat-card">
+          <i class="ti ti-eye"></i>
+          <span class="stat-label">Visibility</span>
+          <span class="stat-value visibility"></span>
+        </div>
+
+        <div class="stat-card">
+          <i class="ti ti-gauge"></i>
+          <span class="stat-label">Pressure</span>
+          <span class="stat-value pressure"></span>
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="forecast">
+      </section>
+
+      <div class="loading-state hidden"></div>
+    </main>
+
+    <hr />
+
+    <footer>
+      <p>Powered by OpenWeatherMap API.</p>
+    </footer>
+  </body>
+</html>
